@@ -34,5 +34,19 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  css: [{ src: '~assets/styles/index.scss', lang: 'scss' }],
+  router: {
+    middleware: 'router',
+  },
+  modules: ['@nuxtjs/axios'],
+  axios: {
+    proxy: true,
+  },
+  proxy: {
+    '/api': {
+      target: 'xxxx',
+      pathRewrite: { '^/api': '' },
+    },
+  },
 }
